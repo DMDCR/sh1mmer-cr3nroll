@@ -22,7 +22,7 @@ jobs:
           sudo apt install pv
           wget https://dl.cros.download/files/${{ matrix.board }}/${{ matrix.board }}.zip || exit 1
           unzip ${{ matrix.board }}.zip || exit 1
-          sudo QUIET=1 bash wax/wax.sh -i ${{ matrix.board }}.bin -p legacy
+          sudo QUIET=1 bash wax.sh -i ${{ matrix.board }}.bin -p legacy
           zip ${{ matrix.board }}-cr3nroll.zip ${{ matrix.board }}.bin
 
       - name: Upload to GitHub Release
